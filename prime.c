@@ -1,9 +1,40 @@
 #include<stdio.h>
-int main()
+void main()
 {
-int a[10]=srand(1,100);
-int i;
-for(i=0;i<100;i++)
-printf("%d",a[i]);
-return 0;
+  int i,j;
+
+    for(i=1;i<=1015;i++)
+    {
+        if(isprime(i)&&(isprime(reverse(i))))
+        {
+            printf("%d \n",i);
+        }
+    }
 }
+
+int isprime(int m)
+{
+int i;
+    for(i=2;i<=m/2;i++)
+    {
+       if(m%i==0)
+       return 0;
+    }
+    return 1;
+}
+
+int reverse(int n)
+{
+
+    int rev;
+    int digit;
+    rev=0;
+    while(n!=0)
+    {
+        digit=n%10;
+        n=n/10;
+        rev=digit+10*rev;
+    }
+    return rev;
+}
+
